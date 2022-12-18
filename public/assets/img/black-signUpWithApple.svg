@@ -1,0 +1,20 @@
+<svg id="_Sign_up_with_Apple_-_Black" data-name=" Sign up with Apple - Black" xmlns="http://www.w3.org/2000/svg" width="342" height="54" viewBox="0 0 342 54">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        font-size: 19px;
+        font-family: Helvetica;
+      }
+    </style>
+  </defs>
+  <rect id="Background" width="342" height="54" rx="6"/>
+  <g id="_Sign_up_with_Apple" data-name=" Sign up with Apple" transform="translate(23 4)">
+    <g id="Button_Label" data-name="Button Label" transform="translate(75.857 10)">
+      <text id="Sign_up_with_Apple" data-name="Sign up with Apple" class="cls-1" transform="translate(80 19)"><tspan x="-78.171" y="0">Sign up with Apple</tspan></text>
+    </g>
+    <g id="_" data-name="" transform="translate(55.857 7)">
+      <text id="_2" data-name="" class="cls-1" transform="translate(8 22)"><tspan x="-7.505" y="0"></tspan></text>
+    </g>
+  </g>
+</svg>

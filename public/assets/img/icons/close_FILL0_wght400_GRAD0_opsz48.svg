@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="13.753" height="13.753" viewBox="0 0 13.753 13.753">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #db344a;
+        stroke: #db344a;
+        stroke-linejoin: round;
+        stroke-width: 0.4px;
+      }
+    </style>
+  </defs>
+  <path id="close_FILL0_wght400_GRAD0_opsz48" class="cls-1" d="M11.377,23.7,10.35,22.676,16,17.027l-5.649-5.65,1.027-1.027L17.027,16l5.65-5.649L23.7,11.377l-5.649,5.65,5.65,5.65L22.676,23.7l-5.65-5.649Z" transform="translate(-10.15 -10.15)"/>
+</svg>

@@ -1,0 +1,543 @@
+
+.registerbox{
+  margin: 0 13px;
+  text-align: center;
+  background-color: unset;
+}
+
+.polyroidImgRegister{
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  img{
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+.title-wrapper{
+  margin-top: 110px;
+  h3{
+    font-size: 1.4em;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+  }
+  h4{
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+}
+
+.register-possibilities-wrapper{
+
+  .register-googleApple-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    justify-content: center;
+    column-gap: 100%;
+    margin: 40px 0 20px;
+
+    .signIn-with-apple-wrapper, .signIn-with-google-wrapper{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      column-gap: 10px;
+      width:240px;
+      h6{
+        font-weight: 400;
+        font-size: 0.8em;
+      }
+      img{
+        width: 100%;
+        max-width: 14px;
+        //margin-left: 16px;
+      }
+    }
+    .signIn-with-apple-wrapper{
+      background-color: var(--blackColor);
+      color: white;
+      border-radius: 180px;
+    }
+    .signIn-with-google-wrapper{
+      border: 1px solid var(--blackColor);
+      border-radius: 180px;
+    }
+  }
+  .other-line-wrapper{
+    margin: 30px 0 30px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    hr{
+      width: 80px;
+      opacity: 20%;
+    }
+    p{
+
+    }
+  }
+  .button-forward{
+    color: var(--redMainColor);
+    text-transform: uppercase;
+    font-size: 1.05em;
+    font-weight: 600;
+    background-color: unset;
+    border: unset;
+  }
+  .legal{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 0 30px;
+    p{
+      font-size: 0.7em;
+      text-align: center;
+    }
+  }
+}
+
+// Registrierungs Prozess
+
+.registerinput-box{
+  .registerbox{
+    .progress-bullets-wrapper{
+      display: flex;
+      justify-content: center;
+      column-gap: 6px;
+      margin-top: 30px;
+      .progress-bullet{
+        width: 8px;
+        height: 8px;
+        background-color: #BDBDBD;
+        border-radius: 180px;
+      }
+      .bullet-active{
+        background-color: var(--redMainColor)
+      }
+      .bullet-done{
+        background-color: var(--redMainColor)
+      }
+    }
+    .registration-title{
+      margin-top: 40px;
+      h3{
+        font-size: 1.5em;
+      }
+      h2{
+        font-size: 4em;
+        text-transform: uppercase;
+      }
+      p{
+        margin: 12px 30px 0;
+        font-weight: 400;
+        font-size: 0.9em;
+      }
+      h6{
+        font-weight: 700;
+        font-size: 1em;
+        margin: 12px 0;
+      }
+    }
+
+    .legals{
+      margin: 0 40px;
+      h6{
+        font-size: 1.0em;
+        font-weight: 600;
+        color: var(--redMainColor);
+        text-align: left;
+        margin: 20px 0 6px 0;
+      }
+
+      .legals-wrapper{
+        display: flex;
+        justify-content: left;
+        column-gap: 14px;
+        input[type="checkbox"]{
+          min-width: 20px;
+        }
+        label{
+          text-align: left;
+        }
+      }
+
+    }
+
+    .registration-selection-gender{
+      margin-top: 30px;
+      .gender-box-wrapper{
+        margin-top: 45px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: 100%;
+        row-gap: 40px;
+        .gender-female, .gender-male, .gender-human{
+          display: flex;
+          flex-wrap: wrap;
+          column-gap: 100%;
+          row-gap: 10px;
+          justify-content: center;
+        }
+        label{
+          font-weight: 600;
+          color: var(--redMainColor)
+        }
+        input[type="radio"] {
+          /* Add if not using autoprefixer */
+          -webkit-appearance: none;
+          appearance: none;
+          margin: 0;
+          color: currentColor;
+          font: inherit;
+          width: 30px;
+          height: 30px;
+          background-color: var(--lightgrey);
+          border-radius: 280px;
+          transform: translateY(-0.075em);
+          display: grid;
+          place-content: center;
+          @media (min-width: 992px){
+            background-color: white;
+          }
+        }
+
+        input[type="radio"]::before {
+          content: "";
+          width: 0.65em;
+          height: 0.65em;
+          border-radius: 180px;
+          transform: scale(0);
+          transition: 120ms transform ease-in-out;
+          box-shadow: inset 1em 1em var(--redMainColor);
+          border: 1px solid var(--redMainColor)
+        }
+
+        input[type="radio"]:checked::before {
+          transform: scale(1);
+          border: 1px solid var(--redMainColor)
+        }
+      }
+    }
+    #registration-img-upload-box{
+      margin: 50px auto 0;
+      width: 120px;
+      height: 120px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #F4F8FD;
+      @media (min-width: 992px){
+        background-color: white;
+      }
+      border-radius: 180px;
+      img{
+        width: 100%;
+        max-width: 50px;
+        flex: 1;
+      }
+    }
+
+    #registration-username-wrapper, #registration-birthday-wrapper, #registration-mailAdress-wrapper, #registration-username-wrapper{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      column-gap: 100%;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      position: relative;
+      label{
+        padding: 0 0 10px;
+        font-size: 1.0em;
+        font-weight: 600;
+        color: var(--redMainColor)
+      }
+      #input-text-field, #registration-username-input, #registration-mail-input{
+        input{
+          border: unset;
+          padding: 16px 0;
+          width: 256px;
+          text-align: center;
+          background-color: var(--textboxBGColor);
+          border-radius: 189px;
+          @media (min-width: 992px){
+            background-color: white;
+          }
+        }
+        img{
+          position: relative;
+          right: 28px;
+          top: 2px;
+        }
+      }
+    }
+
+    #registration-sexualität-wrapper{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      column-gap: 100%;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      label{
+        padding: 0 0 10px;
+        font-size: 1em;
+        font-weight: 600;
+        color: var(--redMainColor)
+      }
+      select{
+        appearance: none;
+        border: unset;
+        padding: 20px 0;
+        width: 256px;
+        text-align: center;
+        background-color: var(--textboxBGColor);
+        border-radius: 189px;
+        color: #727272;
+        @media (min-width: 992px){
+          background-color: white;
+        }
+      }
+    }
+
+    .button-forward{
+      margin-top: 50px;
+      color: white;
+      font-size: 1.05em;
+      font-weight: 400;
+      background-color: var(--redMainColor);
+      border: unset;
+      padding: 12px 80px;
+      border-radius: 180px;
+    }
+
+    .button-back{
+      margin-top: 8px;
+      color: var(--blackColor);
+      background-color: unset;
+      font-size: 0.9em;
+      font-weight: 400;
+      border: unset;
+      padding: 12px 80px;
+      border-radius: 180px;
+      display: none;
+    }
+  }
+
+  .button-wrapper{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 100%;
+    margin-bottom: 40px;
+  }
+
+  .background-shape img{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: block;
+    z-index: -1;
+    opacity: 20%;
+  }
+}
+
+.send-again{
+  font-size: 0.85em;
+  font-weight: 300;
+  margin-top: 14px;
+  font-style: italic;
+}
+
+.error-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+#errormessage{
+  color: var(--redMainColor);
+  font-size: 0.8em;
+  padding: 6px 24px 0;
+  font-weight: 400;
+}
+
+// Send Box
+
+
+.finalbox{
+  @media (min-width: 992px){
+    background-color: #F5F5F5;
+    position: relative;
+    border-radius: 20px;
+    padding: 4px 0;
+  }
+  .polyroidImgRegister{
+    margin-top: 60px;
+    img{
+
+    }
+  }
+  .progress-bullets-wrapper{
+    display: flex;
+    justify-content: center;
+    column-gap: 6px;
+    margin-top: 30px;
+    .progress-bullet{
+      width: 8px;
+      height: 8px;
+      background-color: #BDBDBD;
+      border-radius: 180px;
+    }
+    .bullet-active{
+      background-color: var(--redMainColor)
+    }
+    .bullet-done{
+      background-color: var(--redMainColor)
+    }
+  }
+  .final-title{
+    margin: 20px 0;
+
+    h2{
+      font-size: 3.3em;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-align: center;
+      padding-bottom: 30px;
+    }
+    p{
+      text-align: center;
+      font-size: 1em;
+      font-weight: 400;
+      padding: 0 16px;
+
+    }
+    h6{
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: 600;
+      padding: 10px 0;
+    }
+  }
+  .button-wrapper{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 100%;
+    margin-bottom: 40px;
+  }
+  .button-forward{
+    margin-top: 50px;
+    color: white;
+    font-size: 1.05em;
+    font-weight: 400;
+    background-color: var(--redMainColor);
+    border: unset;
+    padding: 12px 80px;
+    border-radius: 180px;
+  }
+
+  .button-back{
+    margin-top: 8px;
+    color: var(--blackColor);
+    background-color: unset;
+    font-size: 0.9em;
+    font-weight: 400;
+    border: unset;
+    padding: 12px 80px;
+    border-radius: 180px;
+    display: none;
+  }
+
+  .background-shape img{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: block;
+    z-index: -1;
+  }
+}
+
+
+@media (min-width: 992px){
+
+  body{
+    background-image: url("/../assets/img/register-backgroundimg.jpg");
+    width: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+
+
+  .bg{
+    max-width: 440px;
+    width: 100%;
+    margin: 60px auto 60px;
+  }
+
+  .registerbox{
+    background-color: #F5F5F5;
+    position: relative;
+    border-radius: 20px;
+    padding: 46px 0;
+
+    .polyroidImgRegister{
+      margin: 0;
+    }
+
+    .registration-title h3{
+      padding: 0 12px;
+    }
+
+    .title-wrapper{
+       margin-top: 60px;
+      h3{
+        font-size: 1.3em;
+      }
+      h4{
+        font-size: 0.9em;
+      }
+    }
+    .register-possibilities-wrapper{
+      .other-line-wrapper{
+        margin: 20px 0;
+      }
+      .button-forward{
+        margin-bottom: 100px;
+      }
+      .legal{
+        padding: 0 30px;
+        bottom: 16px;
+        width: 100%;
+      }
+    }
+  }
+
+
+
+  // Registrierungs Prozess
+
+  //.registerinput-box{
+    .registerbox{
+      .registration-selection-gender{
+        #selection-gender-male, #selection-gender-female, #selection-gender-human, #selection-gendersearch-male, #selection-gendersearch-female, #selection-gendersearch-human{
+          background-color: white !important;
+          width: 70% !important;
+        }
+      }
+      .button-wrapper{
+        margin: 0;
+      }
+    }
+  // }
+  .background-shape{
+    display: none;
+  }
+}

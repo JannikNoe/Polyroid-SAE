@@ -1,0 +1,405 @@
+@charset "UTF-8";
+.registerbox {
+  margin: 0 13px;
+  text-align: center;
+  background-color: unset; }
+
+.polyroidImgRegister {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center; }
+  .polyroidImgRegister img {
+    width: 100%;
+    max-width: 200px; }
+
+.title-wrapper {
+  margin-top: 110px; }
+  .title-wrapper h3 {
+    font-size: 1.4em;
+    text-transform: uppercase;
+    padding-bottom: 6px; }
+  .title-wrapper h4 {
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 400; }
+
+.register-possibilities-wrapper .register-googleApple-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  justify-content: center;
+  column-gap: 100%;
+  margin: 40px 0 20px; }
+  .register-possibilities-wrapper .register-googleApple-wrapper .signIn-with-apple-wrapper, .register-possibilities-wrapper .register-googleApple-wrapper .signIn-with-google-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    column-gap: 10px;
+    width: 240px; }
+    .register-possibilities-wrapper .register-googleApple-wrapper .signIn-with-apple-wrapper h6, .register-possibilities-wrapper .register-googleApple-wrapper .signIn-with-google-wrapper h6 {
+      font-weight: 400;
+      font-size: 0.8em; }
+    .register-possibilities-wrapper .register-googleApple-wrapper .signIn-with-apple-wrapper img, .register-possibilities-wrapper .register-googleApple-wrapper .signIn-with-google-wrapper img {
+      width: 100%;
+      max-width: 14px; }
+  .register-possibilities-wrapper .register-googleApple-wrapper .signIn-with-apple-wrapper {
+    background-color: var(--blackColor);
+    color: white;
+    border-radius: 180px; }
+  .register-possibilities-wrapper .register-googleApple-wrapper .signIn-with-google-wrapper {
+    border: 1px solid var(--blackColor);
+    border-radius: 180px; }
+.register-possibilities-wrapper .other-line-wrapper {
+  margin: 30px 0 30px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center; }
+  .register-possibilities-wrapper .other-line-wrapper hr {
+    width: 80px;
+    opacity: 20%; }
+.register-possibilities-wrapper .button-forward {
+  color: var(--redMainColor);
+  text-transform: uppercase;
+  font-size: 1.05em;
+  font-weight: 600;
+  background-color: unset;
+  border: unset; }
+.register-possibilities-wrapper .legal {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 0 30px; }
+  .register-possibilities-wrapper .legal p {
+    font-size: 0.7em;
+    text-align: center; }
+
+.registerinput-box .registerbox .progress-bullets-wrapper {
+  display: flex;
+  justify-content: center;
+  column-gap: 6px;
+  margin-top: 30px; }
+  .registerinput-box .registerbox .progress-bullets-wrapper .progress-bullet {
+    width: 8px;
+    height: 8px;
+    background-color: #BDBDBD;
+    border-radius: 180px; }
+  .registerinput-box .registerbox .progress-bullets-wrapper .bullet-active {
+    background-color: var(--redMainColor); }
+  .registerinput-box .registerbox .progress-bullets-wrapper .bullet-done {
+    background-color: var(--redMainColor); }
+.registerinput-box .registerbox .registration-title {
+  margin-top: 40px; }
+  .registerinput-box .registerbox .registration-title h3 {
+    font-size: 1.5em; }
+  .registerinput-box .registerbox .registration-title h2 {
+    font-size: 4em;
+    text-transform: uppercase; }
+  .registerinput-box .registerbox .registration-title p {
+    margin: 12px 30px 0;
+    font-weight: 400;
+    font-size: 0.9em; }
+  .registerinput-box .registerbox .registration-title h6 {
+    font-weight: 700;
+    font-size: 1em;
+    margin: 12px 0; }
+.registerinput-box .registerbox .legals {
+  margin: 0 40px; }
+  .registerinput-box .registerbox .legals h6 {
+    font-size: 1.0em;
+    font-weight: 600;
+    color: var(--redMainColor);
+    text-align: left;
+    margin: 20px 0 6px 0; }
+  .registerinput-box .registerbox .legals .legals-wrapper {
+    display: flex;
+    justify-content: left;
+    column-gap: 14px; }
+    .registerinput-box .registerbox .legals .legals-wrapper input[type="checkbox"] {
+      min-width: 20px; }
+    .registerinput-box .registerbox .legals .legals-wrapper label {
+      text-align: left; }
+.registerinput-box .registerbox .registration-selection-gender {
+  margin-top: 30px; }
+  .registerinput-box .registerbox .registration-selection-gender .gender-box-wrapper {
+    margin-top: 45px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 100%;
+    row-gap: 40px; }
+    .registerinput-box .registerbox .registration-selection-gender .gender-box-wrapper .gender-female, .registerinput-box .registerbox .registration-selection-gender .gender-box-wrapper .gender-male, .registerinput-box .registerbox .registration-selection-gender .gender-box-wrapper .gender-human {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 100%;
+      row-gap: 10px;
+      justify-content: center; }
+    .registerinput-box .registerbox .registration-selection-gender .gender-box-wrapper label {
+      font-weight: 600;
+      color: var(--redMainColor); }
+    .registerinput-box .registerbox .registration-selection-gender .gender-box-wrapper input[type="radio"] {
+      /* Add if not using autoprefixer */
+      -webkit-appearance: none;
+      appearance: none;
+      margin: 0;
+      color: currentColor;
+      font: inherit;
+      width: 30px;
+      height: 30px;
+      background-color: var(--lightgrey);
+      border-radius: 280px;
+      transform: translateY(-0.075em);
+      display: grid;
+      place-content: center; }
+      @media (min-width: 992px) {
+        .registerinput-box .registerbox .registration-selection-gender .gender-box-wrapper input[type="radio"] {
+          background-color: white; } }
+    .registerinput-box .registerbox .registration-selection-gender .gender-box-wrapper input[type="radio"]::before {
+      content: "";
+      width: 0.65em;
+      height: 0.65em;
+      border-radius: 180px;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      box-shadow: inset 1em 1em var(--redMainColor);
+      border: 1px solid var(--redMainColor); }
+    .registerinput-box .registerbox .registration-selection-gender .gender-box-wrapper input[type="radio"]:checked::before {
+      transform: scale(1);
+      border: 1px solid var(--redMainColor); }
+.registerinput-box .registerbox #registration-img-upload-box {
+  margin: 50px auto 0;
+  width: 120px;
+  height: 120px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F4F8FD;
+  border-radius: 180px; }
+  @media (min-width: 992px) {
+    .registerinput-box .registerbox #registration-img-upload-box {
+      background-color: white; } }
+  .registerinput-box .registerbox #registration-img-upload-box img {
+    width: 100%;
+    max-width: 50px;
+    flex: 1; }
+.registerinput-box .registerbox #registration-username-wrapper, .registerinput-box .registerbox #registration-birthday-wrapper, .registerinput-box .registerbox #registration-mailAdress-wrapper, .registerinput-box .registerbox #registration-username-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 100%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  position: relative; }
+  .registerinput-box .registerbox #registration-username-wrapper label, .registerinput-box .registerbox #registration-birthday-wrapper label, .registerinput-box .registerbox #registration-mailAdress-wrapper label, .registerinput-box .registerbox #registration-username-wrapper label {
+    padding: 0 0 10px;
+    font-size: 1.0em;
+    font-weight: 600;
+    color: var(--redMainColor); }
+  .registerinput-box .registerbox #registration-username-wrapper #input-text-field input, .registerinput-box .registerbox #registration-username-wrapper #registration-username-input input, .registerinput-box .registerbox #registration-username-wrapper #registration-mail-input input, .registerinput-box .registerbox #registration-birthday-wrapper #input-text-field input, .registerinput-box .registerbox #registration-birthday-wrapper #registration-username-input input, .registerinput-box .registerbox #registration-birthday-wrapper #registration-mail-input input, .registerinput-box .registerbox #registration-mailAdress-wrapper #input-text-field input, .registerinput-box .registerbox #registration-mailAdress-wrapper #registration-username-input input, .registerinput-box .registerbox #registration-mailAdress-wrapper #registration-mail-input input, .registerinput-box .registerbox #registration-username-wrapper #input-text-field input, .registerinput-box .registerbox #registration-username-wrapper #registration-username-input input, .registerinput-box .registerbox #registration-username-wrapper #registration-mail-input input {
+    border: unset;
+    padding: 16px 0;
+    width: 256px;
+    text-align: center;
+    background-color: var(--textboxBGColor);
+    border-radius: 189px; }
+    @media (min-width: 992px) {
+      .registerinput-box .registerbox #registration-username-wrapper #input-text-field input, .registerinput-box .registerbox #registration-username-wrapper #registration-username-input input, .registerinput-box .registerbox #registration-username-wrapper #registration-mail-input input, .registerinput-box .registerbox #registration-birthday-wrapper #input-text-field input, .registerinput-box .registerbox #registration-birthday-wrapper #registration-username-input input, .registerinput-box .registerbox #registration-birthday-wrapper #registration-mail-input input, .registerinput-box .registerbox #registration-mailAdress-wrapper #input-text-field input, .registerinput-box .registerbox #registration-mailAdress-wrapper #registration-username-input input, .registerinput-box .registerbox #registration-mailAdress-wrapper #registration-mail-input input, .registerinput-box .registerbox #registration-username-wrapper #input-text-field input, .registerinput-box .registerbox #registration-username-wrapper #registration-username-input input, .registerinput-box .registerbox #registration-username-wrapper #registration-mail-input input {
+        background-color: white; } }
+  .registerinput-box .registerbox #registration-username-wrapper #input-text-field img, .registerinput-box .registerbox #registration-username-wrapper #registration-username-input img, .registerinput-box .registerbox #registration-username-wrapper #registration-mail-input img, .registerinput-box .registerbox #registration-birthday-wrapper #input-text-field img, .registerinput-box .registerbox #registration-birthday-wrapper #registration-username-input img, .registerinput-box .registerbox #registration-birthday-wrapper #registration-mail-input img, .registerinput-box .registerbox #registration-mailAdress-wrapper #input-text-field img, .registerinput-box .registerbox #registration-mailAdress-wrapper #registration-username-input img, .registerinput-box .registerbox #registration-mailAdress-wrapper #registration-mail-input img, .registerinput-box .registerbox #registration-username-wrapper #input-text-field img, .registerinput-box .registerbox #registration-username-wrapper #registration-username-input img, .registerinput-box .registerbox #registration-username-wrapper #registration-mail-input img {
+    position: relative;
+    right: 28px;
+    top: 2px; }
+.registerinput-box .registerbox #registration-sexualität-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 100%;
+  margin-top: 30px;
+  margin-bottom: 20px; }
+  .registerinput-box .registerbox #registration-sexualität-wrapper label {
+    padding: 0 0 10px;
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--redMainColor); }
+  .registerinput-box .registerbox #registration-sexualität-wrapper select {
+    appearance: none;
+    border: unset;
+    padding: 20px 0;
+    width: 256px;
+    text-align: center;
+    background-color: var(--textboxBGColor);
+    border-radius: 189px;
+    color: #727272; }
+    @media (min-width: 992px) {
+      .registerinput-box .registerbox #registration-sexualität-wrapper select {
+        background-color: white; } }
+.registerinput-box .registerbox .button-forward {
+  margin-top: 50px;
+  color: white;
+  font-size: 1.05em;
+  font-weight: 400;
+  background-color: var(--redMainColor);
+  border: unset;
+  padding: 12px 80px;
+  border-radius: 180px; }
+.registerinput-box .registerbox .button-back {
+  margin-top: 8px;
+  color: var(--blackColor);
+  background-color: unset;
+  font-size: 0.9em;
+  font-weight: 400;
+  border: unset;
+  padding: 12px 80px;
+  border-radius: 180px;
+  display: none; }
+.registerinput-box .button-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 100%;
+  margin-bottom: 40px; }
+.registerinput-box .background-shape img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: block;
+  z-index: -1;
+  opacity: 20%; }
+
+.send-again {
+  font-size: 0.85em;
+  font-weight: 300;
+  margin-top: 14px;
+  font-style: italic; }
+
+.error-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+#errormessage {
+  color: var(--redMainColor);
+  font-size: 0.8em;
+  padding: 6px 24px 0;
+  font-weight: 400; }
+
+@media (min-width: 992px) {
+  .finalbox {
+    background-color: #F5F5F5;
+    position: relative;
+    border-radius: 20px;
+    padding: 4px 0; } }
+.finalbox .polyroidImgRegister {
+  margin-top: 60px; }
+.finalbox .progress-bullets-wrapper {
+  display: flex;
+  justify-content: center;
+  column-gap: 6px;
+  margin-top: 30px; }
+  .finalbox .progress-bullets-wrapper .progress-bullet {
+    width: 8px;
+    height: 8px;
+    background-color: #BDBDBD;
+    border-radius: 180px; }
+  .finalbox .progress-bullets-wrapper .bullet-active {
+    background-color: var(--redMainColor); }
+  .finalbox .progress-bullets-wrapper .bullet-done {
+    background-color: var(--redMainColor); }
+.finalbox .final-title {
+  margin: 20px 0; }
+  .finalbox .final-title h2 {
+    font-size: 3.3em;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 30px; }
+  .finalbox .final-title p {
+    text-align: center;
+    font-size: 1em;
+    font-weight: 400;
+    padding: 0 16px; }
+  .finalbox .final-title h6 {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 10px 0; }
+.finalbox .button-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 100%;
+  margin-bottom: 40px; }
+.finalbox .button-forward {
+  margin-top: 50px;
+  color: white;
+  font-size: 1.05em;
+  font-weight: 400;
+  background-color: var(--redMainColor);
+  border: unset;
+  padding: 12px 80px;
+  border-radius: 180px; }
+.finalbox .button-back {
+  margin-top: 8px;
+  color: var(--blackColor);
+  background-color: unset;
+  font-size: 0.9em;
+  font-weight: 400;
+  border: unset;
+  padding: 12px 80px;
+  border-radius: 180px;
+  display: none; }
+.finalbox .background-shape img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: block;
+  z-index: -1; }
+
+@media (min-width: 992px) {
+  body {
+    background-image: url("/../assets/img/register-backgroundimg.jpg");
+    width: 100%;
+    background-position: top;
+    background-repeat: no-repeat; }
+
+  .bg {
+    max-width: 440px;
+    width: 100%;
+    margin: 60px auto 60px; }
+
+  .registerbox {
+    background-color: #F5F5F5;
+    position: relative;
+    border-radius: 20px;
+    padding: 46px 0; }
+    .registerbox .polyroidImgRegister {
+      margin: 0; }
+    .registerbox .registration-title h3 {
+      padding: 0 12px; }
+    .registerbox .title-wrapper {
+      margin-top: 60px; }
+      .registerbox .title-wrapper h3 {
+        font-size: 1.3em; }
+      .registerbox .title-wrapper h4 {
+        font-size: 0.9em; }
+    .registerbox .register-possibilities-wrapper .other-line-wrapper {
+      margin: 20px 0; }
+    .registerbox .register-possibilities-wrapper .button-forward {
+      margin-bottom: 100px; }
+    .registerbox .register-possibilities-wrapper .legal {
+      padding: 0 30px;
+      bottom: 16px;
+      width: 100%; }
+
+  .registerbox .registration-selection-gender #selection-gender-male, .registerbox .registration-selection-gender #selection-gender-female, .registerbox .registration-selection-gender #selection-gender-human, .registerbox .registration-selection-gender #selection-gendersearch-male, .registerbox .registration-selection-gender #selection-gendersearch-female, .registerbox .registration-selection-gender #selection-gendersearch-human {
+    background-color: white !important;
+    width: 70% !important; }
+  .registerbox .button-wrapper {
+    margin: 0; }
+
+  .background-shape {
+    display: none; } }
+
+/*# sourceMappingURL=registerstyle.css.map */
