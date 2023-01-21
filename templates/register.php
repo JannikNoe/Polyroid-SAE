@@ -1,7 +1,7 @@
 <?php
 
 global $errors;
-var_dump( $errors );
+// var_dump( $errors );
 // var_dump( $_POST );
 
 // var_dump($_SERVER['REQUEST_METHOD'] );
@@ -77,15 +77,15 @@ var_dump( $errors );
                             <div class="gender-box-wrapper">
                                 <div class="gender-female">
                                     <label for="gender--female">Weiblich</label>
-                                    <input id="gender--female" type="radio" name="gender" value="gender--female" >
+                                    <input id="gender--female" type="radio" name="gender" value="gender--female" <?php if(isset($_POST['gender']) && $_POST['gender'] == 'genderresearch--female'){echo 'checked';}?>>
                                 </div>
                                 <div class="gender-male">
                                     <label for="gender--male">Männlich</label>
-                                    <input id="gender--male" type="radio" name="gender" value="gender--male">
+                                    <input id="gender--male" type="radio" name="gender" value="gender--male" <?php if(isset($_POST['gender']) && $_POST['gender'] == 'genderresearch--male'){echo 'checked';}?>>
                                 </div>
                                 <div class="gender-human">
                                     <label for="gender--human">Mensch</label>
-                                    <input id="gender--human" type="radio" name="gender" value="gender--human">
+                                    <input id="gender--human" type="radio" name="gender" value="gender--human" <?php if(isset($_POST['gender']) && $_POST['gender'] == 'genderresearch--human'){echo 'checked';}?>>
                                 </div>
                                 <div class="error-wrapper">
                                     <?php if ( isset( $errors[ 'gender' ] ) ):?>
@@ -213,7 +213,7 @@ var_dump( $errors );
                     <div id="registration-username-wrapper">
                         <label for="text">Nutzername</label>
                         <div id="registration-username-input">
-                            <input id="username" type="text" name="username" placeholder="Dein Nutzername lautet..." >
+                            <input id="username" type="text" name="username" placeholder="Dein Nutzername lautet..." />
                             <img src="assets/img/icons/close_FILL0_wght400_GRAD0_opsz48.svg" style="display: none;">
                             <img src="assets/img/icons/check_FILL0_wght400_GRAD0_opsz48.svg" style="display: none;">
                         </div>
@@ -334,7 +334,7 @@ var_dump( $errors );
                     <div id="registration-username-wrapper">
                         <label for="text">E-Mail-Adresse</label>
                         <div id="registration-mail-input">
-                            <input id="email-adress" type="email" name="email-adress" placeholder="Dein E-Mail-Adresse lautet..." >
+                            <input id="email-adress" type="email" name="email" placeholder="Dein E-Mail-Adresse lautet..." >
                             <img src="assets/img/icons/close_FILL0_wght400_GRAD0_opsz48.svg" style="display: none;">
                             <img src="assets/img/icons/check_FILL0_wght400_GRAD0_opsz48.svg" style="display: none;">
                         </div>
@@ -382,7 +382,7 @@ var_dump( $errors );
                     <div id="registration-username-wrapper">
                         <label for="text">Passwort</label>
                         <div id="registration-mail-input">
-                            <input id="password" type="password" name="password" placeholder="Dein Passwort lautet..." >
+                            <input id="password" type="password" name="password" placeholder="Dein Passwort lautet..." />
                             <img src="assets/img/icons/close_FILL0_wght400_GRAD0_opsz48.svg" style="display: none;">
                             <img src="assets/img/icons/check_FILL0_wght400_GRAD0_opsz48.svg" style="display: none;">
                         </div>
@@ -397,7 +397,7 @@ var_dump( $errors );
                     <div id="registration-username-wrapper">
                         <label for="text">Passwort wiederholen</label>
                         <div id="registration-mail-input">
-                            <input id="password_repeat" type="password" name="password_repeat" placeholder="Wiederhole dein Passwort" >
+                            <input id="password_repeat" type="password" name="password_repeat" placeholder="Wiederhole dein Passwort"  />
                             <img src="assets/img/icons/close_FILL0_wght400_GRAD0_opsz48.svg" style="display: none;">
                             <img src="assets/img/icons/check_FILL0_wght400_GRAD0_opsz48.svg" style="display: none;">
                         </div>
@@ -436,14 +436,14 @@ var_dump( $errors );
                         <div class="progress-bullet"></div>
                     </div>
                     <div class="registration-title">
-                        <h3>Die wirklich Wichten
+                        <h3>Die wirklich wichtigen
                             Dinge</h3>
                     </div>
 
                     <div class="legals">
                         <h6>AGB*</h6>
                         <div class="legals-wrapper">
-                            <input type="checkbox" id="agb" name="agb" value="1" >
+                            <input type="checkbox" id="agb" name="agb" value="1" <?php if(isset($_POST['privacy']) && $_POST['privacy'] == 1){echo 'checked';}?>>
                             <label for="scales">Ich habe die AGB gelesen und stimme
                                 diesen zu.</label>
                         </div>
@@ -456,7 +456,7 @@ var_dump( $errors );
                         </div>
                         <h6>Datenschutz*</h6>
                         <div class="legals-wrapper">
-                            <input type="checkbox" id="privacy" name="privacy" value="1" >
+                            <input type="checkbox" id="privacy" name="privacy" value="1" <?php if(isset($_POST['privacy']) && $_POST['privacy'] == 1){echo 'checked';}?>>
                             <label for="scales">Ich habe die Datenschutzbestimmungen
                                 gelesen und stimme diesen zu.</label>
                         </div>
@@ -469,7 +469,7 @@ var_dump( $errors );
                         </div>
                         <h6>Jugendschutz*</h6>
                         <div class="legals-wrapper">
-                            <input type="checkbox" id="youthprotection" name="youthprotection" value="1" >
+                            <input type="checkbox" id="youthprotection" name="youthprotection" value="1" <?php if(isset($_POST['youthprotection']) && $_POST['youthprotection'] == 1){echo 'checked';}?>>
                             <label for="scales">Ich bestätige, mindestens 18 Jahre alt
                                 zu sein.</label>
                         </div>
@@ -483,6 +483,9 @@ var_dump( $errors );
                     </div>
                     <div class="button-wrapper">
                         <button value="register" type= "submit" class="button-forward">Registrieren</button>
+                    </div>
+                    <div class="button-login">
+                        <a href="?page=login">Zum Login</a>
                     </div>
                 </div>
                 <div class="background-shape">

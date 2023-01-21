@@ -95,7 +95,32 @@ function register( array &$errors ) : bool {
         && $validate_youthprotection
 
     ) {
-        echo "
+
+        /** @var array $user_data */
+        $user_data = [
+            'username' => $username,
+            'gender' => $gender,
+            'gendersearch' => $gendersearch,
+            'sexuality' => $sexuality,
+            'email' => $email,
+            'password' => md5( $password ),
+            'agb' => $agb,
+            'privacy' => $privacy,
+            'youthprotection' => $youthprotection
+        ];
+
+        $user = [];
+
+        foreach( $user_data as $key => $value ) {
+             $user[] = "{$key}:{$value}";
+        }
+
+        $new_user = implode( '|' , $user);
+
+        file_put_contents( DATA_USERS, "{$new_user}\n", FILE_APPEND );
+
+        {
+            echo "
                  <head>
                     <meta charset='UTF-8'>
                     <title>Registrierung</title>
@@ -126,7 +151,7 @@ function register( array &$errors ) : bool {
                             <p>eine E-Mail mit dem Verifizierungslink geschickt. Bestätige deine E-Mail-Adresse um dein Polyroid Erlebnis zu starten.</p>
                         </div>
                         <div class='button-wrapper'>
-                            <button class='button-forward'>Zum Login</button>
+                            <a href='?page=login'><button class='button-forward'>Zum Login</button></a>
                             <span class='send-again' id='mailSendAgain'>E-Mail erneut senden</span>
                         </div>
                         <div class='background-shape'>
@@ -135,7 +160,9 @@ function register( array &$errors ) : bool {
                     </div>
                 </section>
             </body>";
-        exit();
+            exit();
+        }
+
     }
 
     return FALSE;
@@ -165,23 +192,28 @@ function validate_password( array &$errors, ?string $password, ?string $password
 }
 
 
-function validate_email(array &$errors, ?string $email ) : bool {
-    /*if ( is_null( $email) || empty( $email ) ) {
+function validate_email( array &$errors, ?string $email ) : bool {
+    if ( is_null ( $email) || empty( $email ) ) {
         $errors[ 'email' ][] = 'Es muss eine E-Mail-Adresse eingetragen werden.';
-    }*/
+    }
+
+    // Überprüfen ob nutzername existiert
+    if ( email_exists ( $email ) ) {
+        $errors[ 'email'][] = 'Die E-Mail-Adresse existiert bereits';
+    }
 
     if ( filter_var( $email, FILTER_SANITIZE_EMAIL ) === FALSE) {
         $errors[ 'email' ][] = 'Die E-Mail-Adresse ist fehlerhaft.';
     }
 
-    return isset ($errors[ 'email'] ) === FALSE || count( $errors[ 'email' ] ) === 0;
+    return isset ( $errors[ 'email'] ) === FALSE;
 }
 
 function validate_gender( array &$errors, ?string $gender ) : bool {
     //Überprüfen ob das Gender NULL oder leer ist
     if ( is_null( $gender ) || empty( $gender ) ) {
-            $errors[ 'gender' ][] = 'Es muss ein Geschlecht ausgewählt werden';
-        }
+        $errors[ 'gender' ][] = 'Es muss ein Geschlecht ausgewählt werden';
+    }
     // Überprüfen ob Gender validen Wert hat
     if (in_array( $gender, [ 'gender--female', 'gender--male', 'gender--human'] ) === FALSE) {
         $errors[ 'gender' ][] = 'Das Geschlecht ist ungültigt,';
@@ -206,7 +238,7 @@ function validate_gendersearch( array &$errors, ?string $gendersearch ) : bool {
 function validate_sexuality( array & $errors, ?string $sexuality ) : bool {
     //Überprüfen ob sexualität 0 oder leer
     if ( is_null( $sexuality ) || empty( $sexuality ) ) {
-    $errors[ 'sexuality' ][] = 'Wähle deine Sexualität.';
+        $errors[ 'sexuality' ][] = 'Wähle deine Sexualität.';
     }
 
     return isset ($errors[ 'sexuality' ] ) === FALSE || count ($errors[ 'sexuality' ] ) === 0;
@@ -220,6 +252,12 @@ function validate_username( array & $errors, ?string $username ) : bool {
     if ( is_null( $username ) || empty( $username ) ) {
         $errors[ 'username' ][] = 'Der Nutzername darf nicht leer sein.';
     }
+
+    // Überprüfen ob nutzername besteht
+    if ( username_exists ($username ) ) {
+        $errors[ 'username'][] = 'Der Username existiert bereits';
+    }
+
     // Überprüfen ob Nutzername kleiner als 4
     if ( strlen( $username ) < 4 ) {
         $errors[ 'username' ][] = 'Der Nutzername darf nicht kleiner als 4 Buchstaben sein.';
@@ -261,11 +299,6 @@ function validate_youthprotection( array &$errors, ?string $youthprotection) : b
 
     return isset( $errors[ 'youthprotection '] ) === FALSE || count( $errors[ 'youthprotection' ] ) === 0;
 }
-
-// jugenschutz und datenschutz fehlt
-
-
-
 
 
 
