@@ -5,7 +5,6 @@ global $errors;
 // var_dump( $_POST );
 
 // var_dump($_SERVER['REQUEST_METHOD'] );
-
 ?>
 
 <!DOCTYPE html>
@@ -128,15 +127,15 @@ global $errors;
                             <div class="gender-box-wrapper">
                                 <div class="gender-female">
                                     <label for="genderresearch--female">Weiblich</label>
-                                    <input id="genderresearch--female" type="radio" name="genderresearch" value="genderresearch--female" >
+                                    <input id="genderresearch--female" type="radio" name="genderresearch" value="genderresearch--female" <?php if(isset($_POST['genderresearch']) && $_POST['genderresearch'] == 'genderresearch--female'){echo 'checked';}?> />
                                 </div>
                                 <div class="gender-male">
                                     <label for="genderresearch--male">Männlich</label>
-                                    <input id="genderresearch--male" type="radio" name="genderresearch" value="genderresearch--male" >
+                                    <input id="genderresearch--male" type="radio" name="genderresearch" value="genderresearch--male" <?php if(isset($_POST['genderresearch']) && $_POST['genderresearch'] == 'genderresearch--male'){echo 'checked';}?> />
                                 </div>
                                 <div class="gender-human">
                                     <label for="genderresearch--human">Mensch</label>
-                                    <input id="genderresearch--human" type="radio" name="genderresearch" value="genderresearch--human" >
+                                    <input id="genderresearch--human" type="radio" name="genderresearch" value="genderresearch--human" <?php if(isset($_POST['genderresearch']) && $_POST['genderresearch'] == 'genderresearch--human'){echo 'checked';}?>>
                                 </div>
                                 <div class="error-wrapper">
                                     <?php if ( isset( $errors[ 'gendersearch' ] ) ):?>
