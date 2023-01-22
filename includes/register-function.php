@@ -170,22 +170,32 @@ function register( array &$errors ) : bool {
 
 
 function validate_password( array &$errors, ?string $password, ?string $password_repeat ) : bool {
-    if (is_null( $password) || empty( $password ) ) {
-        $errors[ 'password' ][] = 'Das Passwort muss eingetragen werden.';
+    if ( is_null( $password ) || empty( $password ) ) {
+        $errors[ 'password' ][] = 'Please type in a valid password';
     }
 
-    if ( strlen( $password ) <= 8 ) {
-        $errors[ 'password' ][] = 'Das Passwort muss mindestens 8 Zeichen enthalten';
+    if ( strlen( $password ) < 8 ) {
+        $errors[ 'password' ][] = 'Das Passwort muss mindestens 8 Zeichen lang sein.';
     }
 
-    if ( preg_match( '/\s/', $password ) === 1 ){
-        $errors[ 'password' ][] = 'Das Passwort darf keine Leerzeichen enthalten';
+    if ( preg_match( '/[a-z]/', $password ) === 0 ) {
+        $errors[ 'password' ][] = 'Das Passwort muss mindestens einen Kleinbuchstaben enthalten.';
     }
 
-    if ( $password !== $password_repeat ) {
+    if ( preg_match( '/[A-Z]/', $password ) === 0 ) {
+        $errors[ 'password' ][] = 'Das Passwort muss mindestens einen Großbuchstaben enthalten';
+    }
 
-        $errors[ 'password_repeat' ][] = 'Das Passwort stimmt nicht überein';
+    if ( preg_match( '/\d/', $password ) === 0 ) {
+        $errors[ 'password' ][] = 'Das Passwort muss mindestens eine Zahl enthalten';
+    }
 
+    if ( preg_match( '/\W/', $password ) === 0 ) {
+        $errors[ 'password' ][] = 'Das Passwort muss mindestens ein Sonderzeichen enthalten';
+    }
+
+    if ( preg_match( '/\s/', $password ) === 1 ) {
+        $errors[ 'password' ][] = 'Das Passwort darf kein Leerzeichen enthalten';
     }
 
     return isset ($errors[ 'password'] ) === FALSE || count( $errors[ 'password' ] ) === 0;
@@ -264,7 +274,7 @@ function validate_username( array & $errors, ?string $username ) : bool {
     }
 
     // Überprüft ob Nutzername größer als 18
-    if ( strlen( $username ) > 18 ) {
+    if ( strlen( $username ) > 16 ) {
         $errors[ 'username' ][] = 'Der Nutzername darf nicht länger als 18 Zeichen sein.';
     }
     // Überprüfen ob der Nutzername Whitespace enthält

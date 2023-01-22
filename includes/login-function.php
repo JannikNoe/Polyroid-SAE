@@ -1,5 +1,10 @@
 <?php
 
+function is_loggedin() : bool {
+
+    return isset( $_SESSION[ 'login' ] );
+}
+
 function login( array &$errors ) : bool {
     /** @var string|NULL $username */
     $email = filter_input( INPUT_POST, 'email' );
@@ -13,7 +18,12 @@ function login( array &$errors ) : bool {
     // Wenn die Funktion NULL zurückgibt, gib es keinen Nutzer für den Nutzernamen
 
     if ( is_null( $user ) === FALSE ) {
-        if( $user[ 'password' ] === md5( $password ) ) {
+        if ( $user[ 'password' ] === md5( $password ) ) {
+
+            $_SESSION[ 'login' ] = [
+                'username' => $email,
+                'timestamp' => time()
+            ];
 
             return TRUE;
         }
@@ -22,4 +32,8 @@ function login( array &$errors ) : bool {
     $errors [ 'login' ][] = 'Die Kombination aus E-Mail-Adresse und Passwort existiert nicht';
 
     return FALSE;
+}
+
+function logout() : void {
+    unset( $_SESSION[ 'login' ] );
 }
